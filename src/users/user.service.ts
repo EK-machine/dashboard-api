@@ -1,7 +1,7 @@
 import { inject, injectable } from 'inversify';
 import { UserRegisterDto } from './dto/user-register.dto';
 import { User } from './user.entity';
-import { IUserSevice } from './user.service.interface';
+import { IUsersSevice } from './user.service.interface';
 import { UserLoginDto } from './dto/user-login.dto';
 import { IConfigService } from '../config/config.service.interface';
 import { TYPES } from '../types';
@@ -9,7 +9,7 @@ import { IUsersRepository } from './users.repository.interface';
 import { UserModel } from '@prisma/client';
 
 @injectable()
-export class UserService implements IUserSevice {
+export class UserService implements IUsersSevice {
 	constructor(
 		@inject(TYPES.ConfigService) private configService: IConfigService,
 		@inject(TYPES.UsersRepository) private usersRepository: IUsersRepository

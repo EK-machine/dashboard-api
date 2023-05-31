@@ -11,13 +11,13 @@ import { UserRegisterDto } from './dto/user-register.dto';
 import { ValidateMiddleware } from '../common/validate.middleware';
 import { sign } from 'jsonwebtoken';
 import { IConfigService } from '../config/config.service.interface';
-import { IUserSevice } from './user.service.interface';
+import { IUsersSevice } from './user.service.interface';
 import { AuthGuard } from '../common/auth.guard';
 
 @injectable()
 export class UserController extends BaseController implements IUserController {
 	constructor(
-		@inject(TYPES.UserService) private userService: IUserSevice,
+		@inject(TYPES.UserService) private userService: IUsersSevice,
 		@inject(TYPES.ILogger) private loggerService: ILogger,
 		@inject(TYPES.ConfigService) private configService: IConfigService
 	) {
